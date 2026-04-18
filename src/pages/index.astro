@@ -1,0 +1,405 @@
+---
+import Base from "../layouts/Base.astro";
+
+const pains = [
+  {
+    h: "¿Tu negocio pierde prospectos después de las 6pm?",
+    p: "Los clientes te escriben fuera de horario y, para cuando abres, ya están cotizando con tu competencia.",
+  },
+  {
+    h: "¿Gastas horas filtrando WhatsApps?",
+    p: "Tú o tu equipo responden preguntas repetidas que podrían resolverse solas, sin perder el tono humano.",
+  },
+  {
+    h: "¿Cuando se enferma tu recepcionista el negocio se apaga?",
+    p: "Un solo punto de falla detiene ventas, agendas y seguimientos. Tu operación no debería depender de un día malo.",
+  },
+];
+
+const skus = [
+  {
+    name: "Starter",
+    price: "USD 4,900",
+    tag: "Arranque rápido",
+    desc: "Una automatización lista para operar: captura de leads o agendamiento con integración a tu calendario.",
+    features: [
+      "1 flujo automatizado",
+      "Integración con WhatsApp o web",
+      "Handoff claro a tu equipo",
+      "Entrega en 2–3 semanas",
+    ],
+    featured: false,
+  },
+  {
+    name: "Pro",
+    price: "USD 12,900",
+    tag: "El más elegido",
+    desc: "Dos o tres flujos integrados que cubren recepción, calificación y seguimiento de prospectos de punta a punta.",
+    features: [
+      "2–3 flujos automatizados",
+      "Integraciones con CRM y calendarios",
+      "Dashboard de conversaciones",
+      "Entrega en 4–6 semanas",
+    ],
+    featured: true,
+  },
+  {
+    name: "Custom",
+    price: "USD 24,900+",
+    tag: "A la medida",
+    desc: "Solución diseñada para tu operación: múltiples canales, lógica de negocio propia y conexiones internas.",
+    features: [
+      "Alcance definido contigo",
+      "Integraciones especializadas",
+      "Pruebas con tu equipo real",
+      "Soporte de despliegue dedicado",
+    ],
+    featured: false,
+  },
+];
+---
+
+<Base>
+  <!-- Construction banner -->
+  <div class="w-full bg-ember-500/10 border-b border-ember-500/20 text-ember-200 text-center text-xs sm:text-sm py-2 px-4">
+    <span class="inline-flex items-center gap-2">
+      <span class="inline-block w-1.5 h-1.5 rounded-full bg-ember-400 animate-pulse"></span>
+      Sitio en construcción · Estamos terminando los últimos detalles
+    </span>
+  </div>
+
+  <!-- Header -->
+  <header class="absolute top-9 left-0 right-0 z-30">
+    <div class="mx-auto max-w-6xl px-6 flex items-center justify-between">
+      <a href="/" class="flex items-center gap-2.5 group">
+        <span class="inline-flex items-center justify-center w-8 h-8 rounded-md bg-gradient-to-br from-ember-400 to-ember-600 text-navy-950 font-bold text-sm">FL</span>
+        <span class="font-serif text-xl text-sand-50 tracking-tight">Fundar Labs</span>
+      </a>
+      <a
+        href="mailto:hola@fundarlabs.com.mx?subject=Agendar%20demo%20Fundar%20Labs"
+        class="hidden sm:inline-flex items-center gap-2 text-sm px-4 py-2 rounded-full border border-white/15 text-sand-50 hover:border-ember-400/60 hover:text-ember-300 transition-colors"
+      >
+        Agendar demo
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+      </a>
+    </div>
+  </header>
+
+  <!-- Hero -->
+  <section class="relative overflow-hidden hero-grad noise pt-36 pb-28 sm:pt-48 sm:pb-36">
+    <div class="relative mx-auto max-w-6xl px-6">
+      <p class="inline-flex items-center gap-2 text-xs uppercase tracking-[0.22em] text-ember-300/90 mb-6">
+        <span class="w-8 h-px bg-ember-400/70"></span>
+        Automatización con IA · Jalisco, México
+      </p>
+      <h1 class="font-serif text-4xl sm:text-6xl lg:text-7xl leading-[1.02] text-sand-50 max-w-4xl">
+        Fundar Labs
+      </h1>
+      <p class="font-serif text-2xl sm:text-3xl lg:text-4xl leading-tight text-sand-100/90 mt-4 max-w-3xl">
+        Automatizamos los procesos que te roban tiempo y clientes.
+      </p>
+      <p class="mt-8 text-base sm:text-lg text-sand-100/70 max-w-2xl">
+        Construimos agentes y flujos con IA para negocios en México que están cansados de perder prospectos fuera de horario, filtrar mensajes a mano y depender de una sola persona.
+      </p>
+      <div class="mt-10 flex flex-wrap items-center gap-4">
+        <a
+          href="mailto:hola@fundarlabs.com.mx?subject=Agendar%20demo%20Fundar%20Labs&body=Hola%2C%20me%20interesa%20ver%20una%20demo.%20Mi%20negocio%20es%3A%20"
+          class="inline-flex items-center gap-2 px-6 py-3 rounded-full bg-ember-500 hover:bg-ember-400 text-navy-950 font-semibold text-sm transition-colors shadow-[0_0_0_1px_rgba(249,122,18,0.35),0_12px_40px_-8px_rgba(249,122,18,0.6)]"
+        >
+          Agendar demo
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+        </a>
+        <a
+          href="#solucion"
+          class="inline-flex items-center gap-2 px-5 py-3 rounded-full text-sm text-sand-50/90 border border-white/10 hover:border-white/25 transition-colors"
+        >
+          Ver cómo funciona
+        </a>
+      </div>
+
+      <div class="mt-16 grid grid-cols-2 sm:grid-cols-4 gap-6 max-w-3xl">
+        <div>
+          <p class="font-serif text-3xl text-ember-300">24/7</p>
+          <p class="text-xs text-sand-100/60 mt-1">Atención sin horarios</p>
+        </div>
+        <div>
+          <p class="font-serif text-3xl text-ember-300">~10 días</p>
+          <p class="text-xs text-sand-100/60 mt-1">De despliegue promedio</p>
+        </div>
+        <div>
+          <p class="font-serif text-3xl text-ember-300">1 sola</p>
+          <p class="text-xs text-sand-100/60 mt-1">Bandeja para tu equipo</p>
+        </div>
+        <div>
+          <p class="font-serif text-3xl text-ember-300">MXN</p>
+          <p class="text-xs text-sand-100/60 mt-1">Precios transparentes en USD</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Problema -->
+  <section id="problema" class="relative py-24 sm:py-32 bg-navy-950">
+    <div class="mx-auto max-w-6xl px-6">
+      <div class="max-w-2xl">
+        <p class="text-xs uppercase tracking-[0.22em] text-ember-300/80 mb-4">El problema</p>
+        <h2 class="font-serif text-3xl sm:text-5xl text-sand-50 leading-tight">
+          Los prospectos no esperan. Tu operación tampoco debería.
+        </h2>
+      </div>
+      <div class="mt-14 grid md:grid-cols-3 gap-6">
+        {pains.map((p) => (
+          <article class="card rounded-2xl p-7">
+            <div class="w-10 h-10 rounded-lg bg-ember-500/15 border border-ember-500/30 flex items-center justify-center mb-5">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="text-ember-300"><circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="12"/><line x1="12" y1="16" x2="12.01" y2="16"/></svg>
+            </div>
+            <h3 class="font-serif text-xl text-sand-50 leading-snug">{p.h}</h3>
+            <p class="mt-3 text-sand-100/65 text-sm leading-relaxed">{p.p}</p>
+          </article>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- Solución -->
+  <section id="solucion" class="relative py-24 sm:py-32 bg-navy-900">
+    <div class="mx-auto max-w-6xl px-6 grid lg:grid-cols-2 gap-14 items-center">
+      <div>
+        <p class="text-xs uppercase tracking-[0.22em] text-ember-300/80 mb-4">La solución</p>
+        <h2 class="font-serif text-3xl sm:text-5xl text-sand-50 leading-tight">
+          Un sistema que atiende, califica y te pasa solo los leads listos para cerrar.
+        </h2>
+        <p class="mt-6 text-sand-100/70 text-base sm:text-lg leading-relaxed">
+          Instalamos un sistema que atiende 24/7, califica prospectos con las preguntas clave y solo te manda leads listos para cerrar. Se conecta a tus canales, aprende el lenguaje de tu negocio y te deja ver cada conversación.
+        </p>
+        <ul class="mt-8 space-y-3 text-sand-100/85 text-sm">
+          <li class="flex items-start gap-3">
+            <span class="mt-1 inline-block w-1.5 h-1.5 rounded-full bg-ember-400 flex-shrink-0"></span>
+            <span>Atiende WhatsApp, web y canales propios sin pausas.</span>
+          </li>
+          <li class="flex items-start gap-3">
+            <span class="mt-1 inline-block w-1.5 h-1.5 rounded-full bg-ember-400 flex-shrink-0"></span>
+            <span>Hace las 5–10 preguntas que realmente importan antes de pasar al vendedor.</span>
+          </li>
+          <li class="flex items-start gap-3">
+            <span class="mt-1 inline-block w-1.5 h-1.5 rounded-full bg-ember-400 flex-shrink-0"></span>
+            <span>Agenda citas directo en tu calendario cuando el cliente está listo.</span>
+          </li>
+          <li class="flex items-start gap-3">
+            <span class="mt-1 inline-block w-1.5 h-1.5 rounded-full bg-ember-400 flex-shrink-0"></span>
+            <span>Te entrega cada lead con el contexto completo de la conversación.</span>
+          </li>
+        </ul>
+      </div>
+
+      <div class="relative">
+        <div class="card rounded-3xl p-6 sm:p-8">
+          <div class="flex items-center gap-2 text-xs text-sand-100/60 mb-5">
+            <span class="w-2 h-2 rounded-full bg-ember-400 animate-pulse"></span>
+            Conversación en vivo · WhatsApp
+          </div>
+          <div class="space-y-3 text-sm">
+            <div class="flex">
+              <div class="bg-white/5 border border-white/10 rounded-2xl rounded-bl-sm px-4 py-2.5 max-w-[85%] text-sand-100/90">
+                Hola, vi su anuncio. ¿Manejan mármol tipo Carrara para cocina?
+              </div>
+            </div>
+            <div class="flex justify-end">
+              <div class="bg-ember-500/15 border border-ember-500/25 rounded-2xl rounded-br-sm px-4 py-2.5 max-w-[85%] text-sand-50">
+                Sí, manejamos Carrara y otros 6 tipos. Para darte un estimado más exacto, ¿qué medidas tiene tu cocina y cuándo te gustaría la instalación?
+              </div>
+            </div>
+            <div class="flex">
+              <div class="bg-white/5 border border-white/10 rounded-2xl rounded-bl-sm px-4 py-2.5 max-w-[85%] text-sand-100/90">
+                Son 6 metros lineales, la queremos lista para junio.
+              </div>
+            </div>
+            <div class="flex justify-end">
+              <div class="bg-ember-500/15 border border-ember-500/25 rounded-2xl rounded-br-sm px-4 py-2.5 max-w-[85%] text-sand-50">
+                Perfecto. Te agendo una visita de medición con uno de nuestros asesores. ¿Prefieres martes 10am o jueves 4pm?
+              </div>
+            </div>
+          </div>
+          <div class="divider mt-6 mb-4"></div>
+          <div class="flex items-center justify-between text-xs">
+            <span class="text-sand-100/55">Lead calificado · Proyecto junio</span>
+            <span class="text-ember-300">Enviado a tu equipo ✓</span>
+          </div>
+        </div>
+        <div class="absolute -inset-6 -z-10 bg-ember-500/10 blur-3xl rounded-full opacity-60"></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SKUs -->
+  <section id="planes" class="relative py-24 sm:py-32 bg-navy-950">
+    <div class="mx-auto max-w-6xl px-6">
+      <div class="max-w-2xl">
+        <p class="text-xs uppercase tracking-[0.22em] text-ember-300/80 mb-4">Planes</p>
+        <h2 class="font-serif text-3xl sm:text-5xl text-sand-50 leading-tight">
+          Precios claros. Sin suscripciones infladas.
+        </h2>
+        <p class="mt-5 text-sand-100/70">
+          Pagas una vez por la instalación. Si quieres monitoreo y mejoras continuas, agregas el Paquete Uptime opcional.
+        </p>
+      </div>
+
+      <div class="mt-14 grid md:grid-cols-3 gap-6">
+        {skus.map((s) => (
+          <article class={`rounded-2xl p-7 flex flex-col ${s.featured ? "card-featured" : "card"}`}>
+            <div class="flex items-center justify-between">
+              <h3 class="font-serif text-2xl text-sand-50">{s.name}</h3>
+              <span class={`text-[10px] uppercase tracking-widest px-2 py-1 rounded-full border ${s.featured ? "border-ember-400/50 text-ember-300 bg-ember-500/10" : "border-white/10 text-sand-100/70"}`}>
+                {s.tag}
+              </span>
+            </div>
+            <p class="font-serif text-4xl text-sand-50 mt-5">{s.price}</p>
+            <p class="mt-3 text-sand-100/65 text-sm leading-relaxed">{s.desc}</p>
+            <ul class="mt-6 space-y-2.5 text-sm text-sand-100/85">
+              {s.features.map((f) => (
+                <li class="flex items-start gap-2.5">
+                  <svg class="mt-0.5 flex-shrink-0 text-ember-400" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+                  <span>{f}</span>
+                </li>
+              ))}
+            </ul>
+            <a
+              href={`mailto:hola@fundarlabs.com.mx?subject=Interesado%20en%20plan%20${s.name}%20—%20Fundar%20Labs`}
+              class={`mt-8 inline-flex items-center justify-center gap-2 px-5 py-2.5 rounded-full text-sm font-medium transition-colors ${s.featured ? "bg-ember-500 hover:bg-ember-400 text-navy-950" : "border border-white/15 text-sand-50 hover:border-ember-400/50 hover:text-ember-300"}`}
+            >
+              Hablar de {s.name}
+            </a>
+          </article>
+        ))}
+      </div>
+
+      <div class="mt-10 card rounded-2xl p-6 sm:p-7 flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4">
+        <div>
+          <p class="text-xs uppercase tracking-[0.22em] text-ember-300/80 mb-2">Opcional</p>
+          <p class="font-serif text-xl text-sand-50">Paquete Uptime · USD 299/mes</p>
+          <p class="text-sm text-sand-100/70 mt-1">Actualizaciones, monitoreo proactivo y ajustes mensuales sobre tu sistema.</p>
+        </div>
+        <a
+          href="mailto:hola@fundarlabs.com.mx?subject=Paquete%20Uptime%20—%20Fundar%20Labs"
+          class="inline-flex items-center gap-2 px-5 py-2.5 rounded-full text-sm border border-white/15 text-sand-50 hover:border-ember-400/50 hover:text-ember-300 transition-colors flex-shrink-0"
+        >
+          Más información
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ROI -->
+  <section id="roi" class="relative py-24 sm:py-32 bg-navy-900">
+    <div class="mx-auto max-w-6xl px-6 grid lg:grid-cols-5 gap-12 items-center">
+      <div class="lg:col-span-2">
+        <p class="text-xs uppercase tracking-[0.22em] text-ember-300/80 mb-4">Retorno</p>
+        <h2 class="font-serif text-3xl sm:text-5xl text-sand-50 leading-tight">
+          Cuesta menos que una recepcionista. Trabaja cuando ella duerme.
+        </h2>
+        <p class="mt-6 text-sand-100/70 leading-relaxed">
+          Una recepcionista cuesta MXN 132–180K al año. Nuestro sistema MXN 92–112K año 1, MXN 42K/año después. Trabaja 24/7, no se enferma, no se le escapa ningún lead.
+        </p>
+      </div>
+
+      <div class="lg:col-span-3 grid sm:grid-cols-2 gap-5">
+        <div class="card rounded-2xl p-6">
+          <p class="text-xs uppercase tracking-widest text-sand-100/55">Recepcionista</p>
+          <p class="font-serif text-4xl text-sand-50 mt-3">MXN 132–180K</p>
+          <p class="text-xs text-sand-100/55 mt-1">por año</p>
+          <ul class="mt-5 text-sm text-sand-100/75 space-y-2">
+            <li>Horario limitado</li>
+            <li>Vacaciones y ausencias</li>
+            <li>Se satura en picos</li>
+          </ul>
+        </div>
+        <div class="card-featured rounded-2xl p-6">
+          <p class="text-xs uppercase tracking-widest text-ember-300">Fundar Labs</p>
+          <p class="font-serif text-4xl text-sand-50 mt-3">MXN 92–112K</p>
+          <p class="text-xs text-ember-300/90 mt-1">año 1 · MXN 42K/año después</p>
+          <ul class="mt-5 text-sm text-sand-100/85 space-y-2">
+            <li>24/7 sin pausas</li>
+            <li>No se enferma, no olvida</li>
+            <li>Escala sin contratar más gente</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Caso de estudio -->
+  <section id="caso" class="relative py-24 sm:py-32 bg-navy-950">
+    <div class="mx-auto max-w-6xl px-6">
+      <p class="text-xs uppercase tracking-[0.22em] text-ember-300/80 mb-4">Caso de estudio</p>
+      <h2 class="font-serif text-3xl sm:text-5xl text-sand-50 leading-tight max-w-3xl">
+        Marmolería en Jalisco, agente en 10 días.
+      </h2>
+
+      <div class="mt-12 grid lg:grid-cols-3 gap-6">
+        <article class="card rounded-2xl p-7">
+          <p class="text-xs uppercase tracking-widest text-sand-100/55">Cliente</p>
+          <p class="font-serif text-xl text-sand-50 mt-3">Marmolería B2B</p>
+          <p class="mt-2 text-sm text-sand-100/70">Jalisco · proyectos residenciales y de oficinas.</p>
+        </article>
+        <article class="card rounded-2xl p-7">
+          <p class="text-xs uppercase tracking-widest text-sand-100/55">Instalación</p>
+          <p class="font-serif text-xl text-sand-50 mt-3">10 días</p>
+          <p class="mt-2 text-sm text-sand-100/70">Del kickoff al agente en producción, integrado con WhatsApp Business.</p>
+        </article>
+        <article class="card-featured rounded-2xl p-7">
+          <p class="text-xs uppercase tracking-widest text-ember-300">Primera semana</p>
+          <p class="font-serif text-xl text-sand-50 mt-3">N leads capturados</p>
+          <p class="mt-2 text-sm text-sand-100/80">Todos calificados con medidas, tipo de material y fecha tentativa de instalación.</p>
+        </article>
+      </div>
+
+      <div class="mt-10 card rounded-2xl p-7 sm:p-10">
+        <p class="font-serif text-2xl sm:text-3xl text-sand-50 leading-snug max-w-3xl">
+          "Antes perdíamos mensajes los fines de semana. Ahora cada cliente se va con una cotización preliminar y una cita en el calendario."
+        </p>
+        <p class="mt-5 text-sm text-sand-100/60">— Dirección comercial, marmolería en Jalisco (caso anonimizado)</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA final -->
+  <section class="relative py-24 sm:py-32 hero-grad noise overflow-hidden">
+    <div class="relative mx-auto max-w-4xl px-6 text-center">
+      <h2 class="font-serif text-4xl sm:text-6xl text-sand-50 leading-[1.05]">
+        ¿Listo para dejar de perder leads?
+      </h2>
+      <p class="mt-6 text-sand-100/75 text-lg max-w-2xl mx-auto">
+        Agenda una demo de 30 minutos. Te mostramos cómo se vería tu sistema, sin compromiso ni contrato.
+      </p>
+      <div class="mt-10 flex flex-wrap items-center justify-center gap-4">
+        <a
+          href="mailto:hola@fundarlabs.com.mx?subject=Agendar%20demo%20Fundar%20Labs&body=Hola%2C%20me%20interesa%20ver%20una%20demo.%20Mi%20negocio%20es%3A%20"
+          class="inline-flex items-center gap-2 px-6 py-3.5 rounded-full bg-ember-500 hover:bg-ember-400 text-navy-950 font-semibold text-sm transition-colors shadow-[0_0_0_1px_rgba(249,122,18,0.35),0_12px_40px_-8px_rgba(249,122,18,0.7)]"
+        >
+          Agendar demo
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+        </a>
+        <a
+          href="mailto:hola@fundarlabs.com.mx"
+          class="inline-flex items-center gap-2 px-5 py-3 rounded-full text-sm text-sand-50/90 border border-white/15 hover:border-white/30 transition-colors"
+        >
+          hola@fundarlabs.com.mx
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="border-t border-white/5 bg-navy-950">
+    <div class="mx-auto max-w-6xl px-6 py-12 flex flex-col sm:flex-row gap-6 sm:items-center sm:justify-between">
+      <div class="flex items-center gap-2.5">
+        <span class="inline-flex items-center justify-center w-8 h-8 rounded-md bg-gradient-to-br from-ember-400 to-ember-600 text-navy-950 font-bold text-sm">FL</span>
+        <span class="font-serif text-lg text-sand-50">Fundar Labs</span>
+      </div>
+      <p class="text-sm text-sand-100/55">
+        Fundar Labs · Jalisco, México · <a href="mailto:hola@fundarlabs.com.mx" class="hover:text-ember-300 transition-colors">hola@fundarlabs.com.mx</a>
+      </p>
+      <p class="text-xs text-sand-100/40">© {new Date().getFullYear()} Fundar Labs. Todos los derechos reservados.</p>
+    </div>
+  </footer>
+</Base>
